@@ -1,0 +1,388 @@
+@font-face {
+    font-family: "Glyphter";
+    src: url('../fonts/Glyphter.eot'), url('../fonts/Glyphter.woff') format('woff'), url('../fonts/Glyphter.svg#abcd') format('svg'), url('../fonts/Glyphter.ttf') format('truetype');
+}
+
+
+/*@import url(https://fonts.googleapis.com/css?family=Work+Sans:100);*/
+
+@font-face {
+    font-family: "Work Sans";
+    src: url('../fonts/WorkSans-Light.woff') format('woff'), url('../fonts/WorkSans-Light.ttf') format('truetype');
+}
+
+body {
+    color: white;
+    background: -webkit-linear-gradient(90deg, #360033 10%, #0b8793 90%), black;
+    /* Chrome 10+, Saf5.1+ */
+    background: -moz-linear-gradient(90deg, #360033 10%, #0b8793 90%), black;
+    /* FF3.6+ */
+    background: -ms-linear-gradient(90deg, #360033 10%, #0b8793 90%), black;
+    /* IE10 */
+    background: -o-linear-gradient(90deg, #360033 10%, #0b8793 90%), black;
+    /* Opera 11.10+ */
+    background: linear-gradient(90deg, #360033 10%, #0b8793 90%), black;
+    /* W3C */
+    font-family: "Works Sans", sans-serif;
+}
+
+.embedded-container {
+    width: 80%;
+    margin-right: auto;
+    margin-left: 10%;
+    margin-top: 20px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.embedded-container .embedded-player-az {
+    height: 100px;
+    max-width: 100%;
+}
+
+.embedded-player-az .embedded-video {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.33);
+    transition: filter 0.5s;
+    -webkit-transition: -webkit-filter 0.5s;
+    -moz-transition: filter 0.5s;
+    -o-transition: filter 0.5s;
+    z-index: 2;
+    width: 100%;
+    height: auto;
+    background: black;
+    border-radius: 5px;
+    /*  
+    CHROME AUDIT ADVICE
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    */
+}
+
+.embedded-player-az .player-remote {
+    width: 100%;
+    position: relative;
+    bottom: 46.5px;
+    /*    fixing firefox issues*/
+    z-index: 2;
+}
+
+.embedded-player-az .player-remote .buttons {
+    opacity: 0;
+    transition: opacity 0.15s;
+    -webkit-transition: opacity 0.15s;
+    -moz-transition: opacity0.15s;
+    -o-transition: opacity 0.15s;
+    background: rgba(1, 112, 208, 0.23);
+    visibility: hidden;
+}
+
+.embedded-player-az .buttons button {
+    font-family: "Glyphter";
+    /*    removing default style*/
+    background: transparent;
+    border: none;
+    padding: 5px;
+    font-size: 20px;
+    color: white;
+}
+
+.embedded-player-az .buttons button:focus {
+    outline: none;
+}
+
+.embedded-player-az .buttons p {
+    margin: 0;
+}
+
+.embedded-player-az:hover .buttons {
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    opacity: 1;
+    visibility: visible;
+}
+
+.embedded-player-az:hover .progressVid {
+    margin-top: 0px;
+    transition: 0.5s;
+}
+
+
+/*buttons unique properties*/
+
+.embedded-player-az .videoTime {
+    font-size: 0.8rem!important;
+    position: relative;
+    bottom: 4px;
+}
+
+.embedded-player-az .video-change,
+.embedded-player-az .subtiles,
+.embedded-player-az .timer {
+    font-family: "Works Sans", sans-serif!important;
+}
+
+.embedded-player-az .subtiles {
+    color: #22a1ff!important;
+}
+
+.embedded-player-az .disabled {
+    color: white!important;
+}
+
+.embedded-player-az .video-change {
+    font-weight: 700;
+}
+
+
+/*progessBar style*/
+
+.embedded-player-az .progressVid {
+    width: 100%;
+    height: 10px;
+    background: #cecece;
+    overflow: hidden;
+    margin-top: 35px;
+}
+
+.embedded-player-az .follow {
+    background: -webkit-linear-gradient(90deg, .00c6ff 10%, #0072ff 90%);
+    background: -moz-linear-gradient(90deg, #00c6ff 10%, #0072ff 90%);
+    background: -ms-linear-gradient(90deg, #00c6ff 10%, #0072ff 90%);
+    background: -o-linear-gradient(90deg, #00c6ff 10%, #0072ff 90%);
+    background: linear-gradient(90deg, #00c6ff 10%, #0072ff 90%);
+    width: 1%;
+    display: inline-block;
+    height: 10px;
+    transition: 0.3s linear;
+    -webkit-transition: 0.3s linear;
+    -moz-transition: 0.3s linear;
+    -o-transition: 0.3s linear;
+    position: relative;
+    bottom: 4px;
+    z-index: 1;
+}
+
+.embedded-player-az .buffer {
+    background: #72779d;
+    width: 0%;
+    display: inline-block;
+    height: 10px;
+    transition: 0.3s linear;
+    transition: 0.3s linear;
+    -webkit-transition: 0.3s linear;
+    -moz-transition: 0.3s linear;
+    -o-transition: 0.3s linear;
+    position: absolute;
+    left: 0;
+    z-index: 0;
+}
+
+.embedded-player-az .dot {
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    top: -2.5px;
+    background: -webkit-linear-gradient(-90deg, #00c6ff 10%, #0072ff 90%);
+    /* Chrome 10+, Saf5.1+ */
+    background: -moz-linear-gradient(-90deg, #00c6ff 10%, #0072ff 90%);
+    /* FF3.6+ */
+    background: -ms-linear-gradient(-90deg, #00c6ff 10%, #0072ff 90%);
+    /* IE10 */
+    background: -o-linear-gradient(-90deg, #00c6ff 10%, #0072ff 90%);
+    /* Opera 11.10+ */
+    background: linear-gradient(-90deg, #00c6ff 10%, #f000 90%);
+    /* W3C */
+    transition: 0.3s linear;
+    -webkit-transition: 0.3s linear;
+    -moz-transition: 0.3s linear;
+    -o-transition: 0.3s linear;
+    z-index: 1;
+}
+
+
+/*while fullscreen*/
+
+.embedded-player-az .full {
+    background: black!important;
+    width: 100vw!important;
+    height: 100vh!important;
+}
+
+
+/*SETTINGS STYLE PART*/
+
+.embedded-player-az .settings {
+    transition: transform 0.3s;
+    transition: 0.3s transform;
+    -webkit-transition: 0.3s transform;
+    -moz-transition: 0.3s transform;
+    -o-transition: 0.3s transform;
+}
+
+.embedded-player-az .settings-ui {
+    width: 150px;
+    height: 125px;
+    position: absolute;
+    right: 0px;
+    top: -150px;
+    font-size: 0.6rem;
+    display: none;
+}
+
+.embedded-container .settings-ui li {
+    border-bottom: thin solid grey;
+    text-align: center;
+    background: #3e3e3e;
+    line-height: 2;
+}
+
+.embedded-container .settings-ui li:hover {
+    background: rgba(0, 0, 0, 0.30);
+}
+
+.embedded-container .settings-ui ul,
+.embedded-container .settings-ui li,
+.embedded-container .settings-ui li p {
+    margin: 0;
+    padding: 0;
+}
+
+.embedded-container .settings li span {
+    text-decoration: underline;
+}
+
+
+/*settings menu popping*/
+
+.embedded-player-az .expand {
+    display: block;
+}
+
+.embedded-player-az input[type=range] {
+    display: inline-block;
+    width: 100px;
+}
+
+
+/*FILTERS*/
+
+.embedded-player-az .grayscale {
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+
+.embedded-player-az .sepia {
+    -webkit-filter: sepia(1);
+    filter: sepia(1);
+}
+
+.embedded-player-az .core {
+    background: transparent;
+}
+
+.embedded-player-az .invert {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+
+.embedded-player-az .night {
+    -webkit-filter: brightness(0.3);
+    filter: brightness(0.3);
+}
+
+.embedded-player-az.blur {
+    /*
+    RIP PAUSE BLUR FEATURE : TAKE TOO MUCH RESSOURCES
+    -webkit-filter: blur(4px)brightness(0.7);
+    filter: blur(4px)brightness(0.7);
+*/
+    -webkit-filter: brightness(0.7);
+    filter: brightness(0.7);
+}
+
+.embedded-player-az .freeze {
+    background: #ffffff;
+}
+
+
+/*INFO PANEL STYLE*/
+
+.embedded-container ul {
+    list-style: none;
+}
+
+.info-panel ul {
+    list-style: none;
+}
+
+.info-panel ul {}
+
+.info-panel {
+    width: 18%;
+    height: 100vh;
+    background: #0097A7;
+    display: inline-block;
+    float: right;
+    font-family: "Work Sans", sans-serif;
+    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.37);
+    position: relative;
+    left: 19%;
+    display: none;
+    /*    this elastic transition complitely failed*/
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.76, 1.3);
+    -webkit-transition: left 0.5s cubic-bezier(0.4, 0, 0.76, 1.3);
+    -moz-transition: left 0.5s cubic-bezier(0.4, 0, 0.76, 1.3);
+    -o-transition: left 0.5s cubic-bezier(0.4, 0, 0.76, 1.3);
+}
+
+.info-panel h4 {
+    text-align: center;
+}
+
+.info-panel .attributes-infos {
+    font-size: 0.7rem;
+    padding-left: 20px;
+    line-height: 2;
+    width: 30%;
+    display: inline-block;
+}
+
+.info-panel .attributes-values {
+    font-size: 0.7em;
+    padding-right: 20px;
+    line-height: 2;
+    width: 30%;
+    text-align: left;
+    display: inline-block;
+}
+
+.info-panel.slide {
+    left: 0;
+    display: inline-block;
+}
+
+
+/*decal video when info panel sliding*/
+
+.embedded-container.decal {
+    margin-left: 0;
+}
+
+
+/*THE END*/
+
+.embedded-player-az .replay {
+    width: 50%;
+    height: 100px;
+    position: absolute;
+    top: 100px;
+    left: 25%;
+    background: #ba2a2a;
+    z-index: 2;
+    text-align: center;
+    display: none;
+    font-size: 1.5rem;
+    align-items: center;
+}

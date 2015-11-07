@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Player</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/play-icon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">           </script>
+        <![endif]-->
+</head>
+
+<body>
+
+    <div class="embedded-container">
+        <div class="embedded-player-az">
+            <!-- the main interactions will be in the .core div-->
+            <div class="core">
+                <div class="replay">
+                    <!-- appear a the end of a video and relaunch it-->
+                </div>
+                <video class="embedded-video" preload="metadata">
+                    <source src="http://adrienzaganelli.com/projects/video-player/videos/norway360.webm" type="video/webm">
+                    <source src="http://adrienzaganelli.com/projects/video-player/videos/norway360.mp4" type="video/mp4">
+                    <source src="http://adrienzaganelli.com/projects/video-player/videos/norway360.ogg" type="video/ogg">
+                    <track src="caption/video.vtt" kind="subtitles" mode="showing" default>
+                        We're sorry, your browser does not support HTML5 video. You can always <a href="http://adrienzaganelli.com/projects/video-player/videos/norway720.webm">download it</a> and watch it with your favorite video player !
+                </video>
+
+                <!-- PLAYER'S INTERFACE-->
+                <div class="player-remote">
+                    <div class="progressVid">
+                        <!--follow the dot-->
+                        <div class="follow"></div>
+                        <div class="buffer"></div>
+                        <div class="dot"></div>
+                    </div>
+
+                    <!--WEBFONT MAKE THIS HTML WEIRD-->
+                    <div class="buttons">
+                        <button class="play-pause">
+                            <p>J</p>
+                        </button>
+
+                        <button class="mute">
+                            <p>W</p>
+                        </button>
+
+                        <!--the style of this input depend of your browser-->
+                        <input type="range" value="100" class="volume" step="1" onchange="volumeValue(this.value)" />
+
+                        <button class="videoTime">
+                            <p></p>
+                        </button>
+
+                        <button style="float:right" class="fullscreen">
+                            <p>B</p>
+                        </button>
+
+                        <button style="float:right" class="settings">
+                            <p>S</p>
+                        </button>
+
+                        <button style="float:right" class="video-change">
+                            <p>HD</p>
+                        </button>
+
+                        <button style="float:right" class="subtiles">
+                            <p>CC</p>
+                        </button>
+
+                    </div>
+
+
+                    <!-- I HAD NO IDEAS FOR VIDEO FEATURES, SO I MADE INSTAGRAM FOR VIDEO PLAYER-->
+                    <div class="settings-ui">
+                        <ul>
+                            <li onclick="settings(this)" class="speed">
+                                <p>speed <span>normal</span></p>
+                            </li>
+                            <li onclick="settings(this)" class="black">
+                                <p>black & white</p>
+                            </li>
+                            <li onclick="settings(this)" class="sepiabtn">
+                                <p>sépia</p>
+                            </li>
+                            <li onclick="settings(this)" class="negative">
+                                <p>negative</p>
+                            </li>
+                            <li onclick="settings(this)" class="nightmode">
+                                <p>night mode</p>
+                            </li>
+
+                            <li onclick="settings(this)" class="dl">
+                                <p>download video</p>
+                            </li>
+                            <li onclick="settings(this)" class="infos">
+                                <p>infos</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--THIS ELEMENT IS HIDDEN ON PAGE LOADING PRESS I TO SEE IT-->
+    <div class="info-panel">
+        <h4>INFOS</h4>
+        <!-- STATIC PART-->
+        <ul class="attributes-infos">
+
+            <li>
+                <p>Time(s)</p>
+            </li>
+
+            <li>
+                <p>Total(s)</p>
+            </li>
+            <li>
+                <p>Speed rate</p>
+            </li>
+            <li>
+                <p>Size</p>
+            </li>
+
+            <li>
+                <p>Mute</p>
+            </li>
+
+            <li>
+                <p>Loops</p>
+            </li>
+
+            <li>
+                <p>Volume</p>
+            </li>
+
+        </ul>
+
+
+
+        <ul class="attributes-values">
+            <!-- DYNAMIC PART-->
+            <!--These values are placeholders-->
+            <li>
+                <p class="currentTime">: 2.0009</p>
+            </li>
+
+            <li>
+                <p class="videoLenght">: 350.8876</p>
+            </li>
+
+            <li>
+                <p class="speedRate">: x1</p>
+            </li>
+
+            <li>
+                <p class="size">: 1280 x 720</p>
+            </li>
+
+            <li>
+                <p class="mute">: true</p>
+            </li>
+            <li>
+                <p class="loops">: false</p>
+            </li>
+            <li>
+                <p class="volume">: 100%</p>
+            </li>
+
+        </ul>
+    </div>
+
+
+    <!--    <input type="file" class="import" >
+    RIP import feature-->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+<!--
+    you did it ! you win a joke : 
+    
+    #titanic { 
+        float: none; 
+    }
+-->
